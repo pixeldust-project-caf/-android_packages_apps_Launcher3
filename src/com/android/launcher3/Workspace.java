@@ -57,7 +57,7 @@ import android.view.ViewGroup;
 import android.view.ViewTreeObserver;
 import android.widget.Toast;
 
-import com.android.internal.util.du.Utils;
+import com.android.internal.util.pixeldust.PixeldustUtils;
 
 import com.android.launcher3.Launcher.LauncherOverlay;
 import com.android.launcher3.LauncherAppWidgetHost.ProviderChangedListener;
@@ -329,11 +329,11 @@ public class Workspace extends PagedView<WorkspacePageIndicator>
                 break;
             // Sleep
             case 1:
-                Utils.switchScreenOff(getContext());
+                PixeldustUtils.switchScreenOff(getContext());
                 break;
             // Flashlight
             case 2:
-                Utils.toggleCameraFlash();
+                PixeldustUtils.toggleCameraFlash();
                 break;
         }
     }
@@ -556,7 +556,7 @@ public class Workspace extends PagedView<WorkspacePageIndicator>
      * @param qsb an existing qsb to recycle or null.
      */
     public void bindAndInitFirstWorkspaceScreen(View qsb) {
-        if (!FeatureFlags.QSB_ON_FIRST_SCREEN) {
+        if (!Utilities.showQSB(getContext())) {
             return;
         }
         // Add the first page
@@ -859,7 +859,7 @@ public class Workspace extends PagedView<WorkspacePageIndicator>
             long id = mWorkspaceScreens.keyAt(i);
             CellLayout cl = mWorkspaceScreens.valueAt(i);
             // FIRST_SCREEN_ID can never be removed.
-            if ((!FeatureFlags.QSB_ON_FIRST_SCREEN || id > FIRST_SCREEN_ID)
+            if ((!Utilities.showQSB(getContext()) || id > FIRST_SCREEN_ID)
                     && cl.getShortcutsAndWidgets().getChildCount() == 0) {
                 removeScreens.add(id);
             }
