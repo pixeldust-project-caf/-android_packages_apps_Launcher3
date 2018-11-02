@@ -64,6 +64,7 @@ import android.view.View;
 import android.view.ViewConfiguration;
 import android.view.animation.Interpolator;
 
+import com.android.internal.util.pixeldust.PixeldustUtils;
 import com.android.launcher3.LauncherModel;
 import com.android.launcher3.compat.LauncherAppsCompat;
 import com.android.launcher3.compat.ShortcutConfigActivityInfo;
@@ -131,6 +132,8 @@ public final class Utilities {
      */
     public static final int EDGE_NAV_BAR = 1 << 8;
 
+    public static final String KEY_SHOW_SEARCHBAR = "pref_show_searchbar";
+
     /**
      * Set on a motion event do disallow any gestures and only handle touch.
      * See {@link MotionEvent#setEdgeFlags(int)}.
@@ -163,6 +166,9 @@ public final class Utilities {
     private static final int CORE_POOL_SIZE = CPU_COUNT + 1;
     private static final int MAXIMUM_POOL_SIZE = CPU_COUNT * 2 + 1;
     private static final int KEEP_ALIVE = 1;
+
+    public static final String SEARCH_PACKAGE = "com.google.android.googlequicksearchbox";
+
     /**
      * An {@link Executor} to be used with async task with no limit on the queue size.
      */
@@ -784,6 +790,13 @@ public final class Utilities {
             return mSize;
         }
     }
+    public static boolean showQSB(Context context) {
+        SharedPreferences prefs = getPrefs(context.getApplicationContext());
+        if (!PixeldustUtils.isPackageInstalled(context, SEARCH_PACKAGE)) {
+            return false;
+        }
+        return prefs.getBoolean(KEY_SHOW_SEARCHBAR, true);
+    }
 
     public static void restart(final Context context) {
         new LooperExecutor(LauncherModel.getWorkerLooper()).execute(() -> {
@@ -794,5 +807,4 @@ public final class Utilities {
             android.os.Process.killProcess(android.os.Process.myPid());
         });
     }
-
 }
