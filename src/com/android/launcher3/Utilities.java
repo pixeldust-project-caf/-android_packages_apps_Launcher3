@@ -139,6 +139,7 @@ public final class Utilities {
     public static final String KEY_SHOW_SEARCHBAR = "pref_show_searchbar";
     public static final String SHOW_WORKSPACE_GRADIENT = "pref_show_workspace_grad";
     public static final String SHOW_HOTSEAT_GRADIENT = "pref_show_hotseat_grad";
+    public static final String BOTTOM_SEARCH_BAR_KEY = "pref_bottom_search_bar";
 
     /**
      * Indicates if the device has a debug build. Should only be used to store additional info or
@@ -798,6 +799,10 @@ public final class Utilities {
 
     public static boolean showHotseatGradient(Context context) {
         return getPrefs(context).getBoolean(SHOW_HOTSEAT_GRADIENT, true);
+    }
+
+    public static boolean isBottomSearchBarVisible(Context context) {
+        return getPrefs(context).getBoolean(BOTTOM_SEARCH_BAR_KEY, true);
     }
 
     public static void restart(final Context context) {
