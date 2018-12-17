@@ -95,5 +95,8 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
     <!-- QuickSpace -->
     <string name="abbrev_wday_month_day_no_year">EEEMMMd</string>
+    <!-- QuickSpace: QuickEvent: Device Intro Event -->
+    <string name="quick_event_rom_intro_welcome">Welcome to Pixel Dust ROM</string>
+    <string name="quick_event_rom_intro_learn">Tap to get started</string>
 
 </resources>
