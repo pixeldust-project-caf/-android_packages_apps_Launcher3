@@ -1,4 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
 <!-- Copyright (C) 2018 The Pixel Dust Project
 
 This program is free software: you can redistribute it and/or modify
@@ -17,15 +16,10 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 <resources>
 
-    <!-- QuickSpace -->
-    <style name="QuickSpaceText">
-        <item name="android:fontFamily">sans-serif</item>
-    </style>
-
     <!-- QSB -->
-    <style name="HotseatQsbTheme">
-        <item name="gIcon">@drawable/ic_super_g_color</item>
-        <item name="micIcon">@drawable/ic_poodle_color</item>
-    </style>
+    <item type="id" name="hotseat_qsb_menu_item" />
+    <item type="id" name="drag_indicator" />
+    <item type="id" name="g_icon" />
+    <item type="id" name="mic_icon" />
 
 </resources>

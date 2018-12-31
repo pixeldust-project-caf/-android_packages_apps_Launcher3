@@ -15,17 +15,10 @@ You should have received a copy of the GNU General Public License
 along with this program.  If not, see <http://www.gnu.org/licenses/>.
 -->
 
-<resources>
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <!-- QuickSpace -->
-    <style name="QuickSpaceText">
-        <item name="android:fontFamily">sans-serif</item>
-    </style>
-
-    <!-- QSB -->
-    <style name="HotseatQsbTheme">
-        <item name="gIcon">@drawable/ic_super_g_color</item>
-        <item name="micIcon">@drawable/ic_poodle_color</item>
-    </style>
+    <!-- Hotseat QSB -->
+    <attr name="gIcon" format="reference" />
+    <attr name="micIcon" format="reference" />
 
 </resources>
