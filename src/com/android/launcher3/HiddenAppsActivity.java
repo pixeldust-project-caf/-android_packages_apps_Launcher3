@@ -40,17 +40,6 @@ public class HiddenAppsActivity extends Activity implements MultiSelectRecyclerV
     private MultiSelectRecyclerViewAdapter mAdapter;
 
     private Menu mMenu;
-    boolean itemClicked = true;
-
-    @Override
-    public boolean onPrepareOptionsMenu(Menu menu) {
-        if (!itemClicked) {
-            menu.findItem(R.id.reset).setVisible(false);
-        } else {
-            menu.findItem(R.id.reset).setVisible(true);
-        }
-        return super.onPrepareOptionsMenu(menu);
-    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -62,21 +51,21 @@ public class HiddenAppsActivity extends Activity implements MultiSelectRecyclerV
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()) {
-            case android.R.id.home:
-                onBackPressed();
-                break;
-            case R.id.reset:
-                unhideHiddenApps();
-                recreate();
-                itemClicked = false;
-                break;
+        int id = item.getItemId();
+        if (id == android.R.id.home) {
+            onBackPressed();
+        } else if (id == R.id.reset) {
+            unhideHiddenApps();
         }
         return super.onOptionsItemSelected(item);
     }
 
     private void unhideHiddenApps() {
         mAdapter.removeSelectionsToHideList(HiddenAppsActivity.this);
+        // mSelections is now cleared, let's notify that our data set has changed
+        mAdapter.notifyDataSetChanged();
+        // update the title
+        mActionBar.setTitle(getString(R.string.hidden_app));
         LauncherAppState appState = LauncherAppState.getInstanceNoCreate();
         if (appState != null) {
             appState.getModel().forceReload();
@@ -94,10 +83,8 @@ public class HiddenAppsActivity extends Activity implements MultiSelectRecyclerV
         if (hiddenApps != null) {
             if (!hiddenApps.isEmpty()) {
                 mActionBar.setTitle(String.valueOf(hiddenApps.size()) + getString(R.string.hide_app_selected));
-                itemClicked = true;
             } else {
                 mActionBar.setTitle(getString(R.string.hidden_app));
-                itemClicked = false;
             }
         }
 
@@ -113,10 +100,11 @@ public class HiddenAppsActivity extends Activity implements MultiSelectRecyclerV
     public void onItemClicked(int position) {
         mAdapter.toggleSelection(mActionBar, position);
         mAdapter.addSelectionsToHideList(HiddenAppsActivity.this);
-        if (mMenu != null) {
-            onPrepareOptionsMenu(mMenu);
+        // force a model reload on every change, this avoids a full restart
+        LauncherAppState appState = LauncherAppState.getInstanceNoCreate();
+        if (appState != null) {
+            appState.getModel().forceReload();
         }
-        LauncherAppState.getInstanceNoCreate().setNeedsRestart();
     }
 
     private List<ResolveInfo> getInstalledApps() {
