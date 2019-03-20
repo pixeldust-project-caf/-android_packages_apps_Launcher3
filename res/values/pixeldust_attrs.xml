@@ -21,4 +21,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
     <attr name="gIcon" format="reference" />
     <attr name="micIcon" format="reference" />
 
+    <!-- Icon packs -->
+    <attr name="dialogTitleColor" format="color" />
+
 </resources>
