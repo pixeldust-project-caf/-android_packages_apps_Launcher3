@@ -110,20 +110,11 @@ public class AllAppsBackgroundDrawable extends Drawable {
 
         final int systemTheme = Settings.System.getInt(context.getContentResolver(), SYSTEM_THEME, 0);
          switch (systemTheme) {
-            case 1: /*Light*/
+            case 1:
                 context = new ContextThemeWrapper(context, R.style.AllAppsEmptySearchBackground);
                 break;
-            case 2: /*Dark*/
+            case 2:
                 context = new ContextThemeWrapper(context, R.style.AllAppsEmptySearchBackground_Dark);
-                break;
-            case 3: /*Black*/
-                context = new ContextThemeWrapper(context, R.style.AllAppsEmptySearchBackground_Black);
-                break;
-            case 4: /*ShishuNights*/
-                context = new ContextThemeWrapper(context, R.style.AllAppsEmptySearchBackground_Black);
-                break;
-            case 5: /*Chocolate*/
-                context = new ContextThemeWrapper(context, R.style.AllAppsEmptySearchBackground_Black);
                 break;
             default:
                 context = new ContextThemeWrapper(context, Themes.getAttrBoolean(context, R.attr.isMainColorDark)
