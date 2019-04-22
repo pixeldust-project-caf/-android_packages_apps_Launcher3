@@ -58,6 +58,7 @@ import android.os.Process;
 import android.os.StrictMode;
 import android.os.UserHandle;
 import android.provider.Settings;
+import android.provider.Settings.SettingNotFoundException;
 import android.support.annotation.Nullable;
 import android.support.v4.graphics.ColorUtils;
 import android.text.TextUtils;
@@ -2585,8 +2586,14 @@ public class Launcher extends BaseDraggingActivity implements LauncherExterns,
     @Override
     public void onExtractedColorsChanged(WallpaperColorInfo wallpaperColorInfo) {
         int alpha = getResources().getInteger(R.integer.extracted_color_gradient_alpha);
-        final int systemTheme = Settings.System.getInt(this.getContentResolver(), SYSTEM_THEME, 0);
-        final boolean simonSaysUseDarkTheme = (systemTheme > 1);
+        int systemTheme;
+        boolean simonSaysUseDarkTheme;
+        try {
+            systemTheme = Settings.Secure.getIntForUser(this.getContentResolver(), Settings.Secure.THEME_MODE, 0);
+        } catch (SettingNotFoundException e) {
+            systemTheme = 0;
+        }
+        simonSaysUseDarkTheme = (systemTheme > 1);
         mUiInformation.putInt("background_color_hint", primaryColor(wallpaperColorInfo, this, alpha));
         mUiInformation.putInt("background_secondary_color_hint", secondaryColor(wallpaperColorInfo, this, alpha));
         mUiInformation.putBoolean("is_background_dark", simonSaysUseDarkTheme);
