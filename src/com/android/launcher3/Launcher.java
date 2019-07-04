@@ -2629,7 +2629,7 @@ public class Launcher extends BaseDraggingActivity implements LauncherExterns,
         } catch (SettingNotFoundException e) {
             systemTheme = 0;
         }
-        simonSaysUseDarkTheme = (systemTheme > 1);
+        simonSaysUseDarkTheme = (systemTheme > 1) || ((systemTheme == 0) && wallpaperColorInfo.isDark());
         mUiInformation.putInt("background_color_hint", primaryColor(wallpaperColorInfo, this, alpha));
         mUiInformation.putInt("background_secondary_color_hint", secondaryColor(wallpaperColorInfo, this, alpha));
         mUiInformation.putBoolean("is_background_dark", simonSaysUseDarkTheme);
