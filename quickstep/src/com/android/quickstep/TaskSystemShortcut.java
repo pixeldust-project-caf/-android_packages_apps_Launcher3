@@ -35,6 +35,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
 
+import com.android.launcher3.AbstractFloatingView;
 import com.android.launcher3.BaseDraggingActivity;
 import com.android.launcher3.DeviceProfile;
 import com.android.launcher3.ItemInfo;
@@ -155,9 +156,8 @@ public class TaskSystemShortcut<T extends SystemShortcut> extends SystemShortcut
                                 }
                             }
                         };
-
-                dismissTaskMenuView(activity);
-
+                AbstractFloatingView.closeOpenViews(activity, true,
+                        AbstractFloatingView.TYPE_ALL & ~AbstractFloatingView.TYPE_REBIND_SAFE);
                 final int navBarPosition = WindowManagerWrapper.getInstance().getNavBarPosition();
                 if (navBarPosition == WindowManagerWrapper.NAV_BAR_POS_INVALID) {
                     return;
@@ -254,7 +254,6 @@ public class TaskSystemShortcut<T extends SystemShortcut> extends SystemShortcut
                     }
                 };
                 taskView.launchTask(true, resultCallback, mHandler);
-                dismissTaskMenuView(activity);
             };
         }
     }
@@ -291,7 +290,7 @@ public class TaskSystemShortcut<T extends SystemShortcut> extends SystemShortcut
             return (v -> {
                 if (TaskSystemShortcut.killTask(task.key, (Activity)activity)) {
                     recentsView.removeIgnoreResetTask(taskView);
-                    dismissTaskMenuView(activity);
+
                     recentsView.dismissTask(taskView, false, true/*remove*/);
                 }
             });
