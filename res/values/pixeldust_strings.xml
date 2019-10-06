@@ -25,4 +25,7 @@
     <!-- Developer options -->
     <string name="dev_options_title">Developer options</string>
     <string name="dev_options_summary">Enable some hidden features at your own risk</string>
+
+    <!-- Folder titles -->
+    <string name="google_folder_title" translatable="false">Google</string>
 </resources>
