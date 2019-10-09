@@ -141,6 +141,9 @@ android_library {
     name: "Launcher3ResLib",
     srcs: [ ],
     resource_dirs: ["res"],
+    defaults: [
+        "SettingsLibDefaults",
+    ],
     static_libs: [
         "LauncherPluginLib",
         "launcher_quickstep_log_protos_lite",
@@ -153,7 +156,6 @@ android_library {
         "androidx.cardview_cardview",
         "com.google.android.material_material",
         "iconloader_base",
-        "SettingsLib",
         "view_capture"
     ],
     manifest: "AndroidManifest-common.xml",
