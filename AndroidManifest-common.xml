@@ -166,7 +166,7 @@
             android:theme="@style/HomeSettings.Theme"
             android:exported="true"
             android:autoRemoveFromRecents="true"
-            android:parentActivityName="com.android.launcher3.SettingsActivity" />
+            android:parentActivityName="com.android.launcher3.settings.SettingsActivity" />
 
         <!-- App drawer -->
         <activity
@@ -175,7 +175,7 @@
             android:theme="@style/HomeSettings.Theme"
             android:exported="true"
             android:autoRemoveFromRecents="true"
-            android:parentActivityName="com.android.launcher3.SettingsActivity" />
+            android:parentActivityName="com.android.launcher3.settings.SettingsActivity" />
 
         <!-- Homescreen -->
         <activity
@@ -184,7 +184,7 @@
             android:theme="@style/HomeSettings.Theme"
             android:exported="true"
             android:autoRemoveFromRecents="true"
-            android:parentActivityName="com.android.launcher3.SettingsActivity" />
+            android:parentActivityName="com.android.launcher3.settings.SettingsActivity" />
 
         <!-- Misc settings -->
         <activity
@@ -193,7 +193,7 @@
             android:theme="@style/HomeSettings.Theme"
             android:exported="true"
             android:autoRemoveFromRecents="true"
-            android:parentActivityName="com.android.launcher3.SettingsActivity" />
+            android:parentActivityName="com.android.launcher3.settings.SettingsActivity" />
 
         <provider
             android:name="com.android.launcher3.testing.TestInformationProvider"
