@@ -16,6 +16,12 @@
             settings:units="%"
             android:defaultValue="40" />
 
+        <SwitchPreference
+            android:key="pref_recents_meminfo"
+            android:title="@string/recents_meminfo_title"
+            android:defaultValue="false"
+            android:persistent="true" />
+
     </PreferenceCategory>
 
     <PreferenceCategory
