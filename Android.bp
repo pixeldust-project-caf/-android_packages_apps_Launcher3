@@ -159,7 +159,9 @@ android_library {
         "libGoogleFeed",
         "libParticles",
         "view_capture",
-        "VendorSupport-Libs"
+        "VendorSupport-Libs",
+        "bcsmartspace-google",
+        "SystemUIPluginLib"
     ],
     manifest: "AndroidManifest-common.xml",
     sdk_version: "current",
