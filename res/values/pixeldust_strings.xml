@@ -24,6 +24,7 @@
     <string name="search_bar_category_title">Search bar</string>
     <string name="recents_category_title">Recents</string>
     <string name="actions_category_title">Recents quick actions</string>
+    <string name="quickspace_category_title">At A Glance</string>
 
     <!-- Developer options -->
     <string name="dev_options_title">Developer options</string>
@@ -164,4 +165,8 @@
     <string name="qsb_search_hint" product="default">Search this phone and more…</string>
     <string name="qsb_search_hint" product="tablet">Search this tablet and more…</string>
     <string name="qsb_search_hint" product="device">Search this device and more…</string>
+
+    <!-- Smartspace -->
+    <string name="smartspace_pref_title">At a Glance (smartspace)</string>
+    <string name="smartspace_pref_summary">Show "At a glance" at the top of home screen</string>
 </resources>

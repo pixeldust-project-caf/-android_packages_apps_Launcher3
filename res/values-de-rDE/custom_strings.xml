@@ -134,7 +134,7 @@
     <string name="recents_shake_clear_all_title">Telefon schütteln zum Schließen aller Apps</string>
     <!-- Smartspace -->
     <string name="smartspace_pref_title">Auf einen Blick (At a Glance)</string>
-    <string name="smartspace_pref_summary">Smartspace am oberen Bildschirmrand anzeigen</string>
+    <string name="smartspace_pref_summary">"Auf einen Blick" am oberen Bildschirmrand anzeigen</string>
     <!-- Parallax -->
     <string name="short_parallax_title">Kurzes Parallax Scrollen erlauben</string>
     <string name="short_parallax_summary">Beschränkt den Scroll-Effekt auf eine kleinere Seitenanzahl, anstatt das Hintergrundbild zu beschneiden</string>
