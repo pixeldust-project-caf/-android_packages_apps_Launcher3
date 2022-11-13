@@ -107,8 +107,6 @@
     <string name="pref_themed_icons_title">Symboldesigns</string>
     <string name="pref_themed_icons_summary">Stil der eingefärbten Symbole auf dem Startbildschirm folgen</string>
     <!-- AppInfo -->
-    <string name="app_info_icon_pack">Icon-Pack</string>
-    <string name="app_info_icon_pack_none">Keines</string>
     <string name="app_info_source">Quelle</string>
     <string name="app_info_source_system">System</string>
     <string name="app_info_last_update">Letzte Aktualisierung</string>
