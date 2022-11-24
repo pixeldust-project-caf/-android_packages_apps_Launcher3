@@ -478,4 +478,3 @@ prebuilt_etc {
     src: "privapp_whitelist_com.android.launcher3-ext.xml",
     filename_from_src: true,
 }
-

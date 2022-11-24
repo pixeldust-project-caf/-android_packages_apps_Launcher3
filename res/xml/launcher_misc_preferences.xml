@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.preference.PreferenceScreen
+<Preference
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:launcher="http://schemas.android.com/apk/res-auto"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.launcher3">
@@ -58,13 +58,13 @@
             launcher:logIdOn="615"
             launcher:logIdOff="616" />
 
-        <androidx.preference.PreferenceScreen
+        <Preference
             android:persistent="false"
             android:title="@string/suggestion_pref_screen_title"
             android:key="pref_suggestions"
             android:summary="@string/suggestion_pref_screen_desc">
             <intent android:action="android.settings.ACTION_CONTENT_SUGGESTIONS_SETTINGS" />
-        </androidx.preference.PreferenceScreen>
+        </Preference>
         
         <com.pixeldust.support.preference.CustomSeekBarPreference
             android:key="pref_blur_depth"
@@ -78,11 +78,11 @@
 
     </PreferenceCategory>
 
-    <androidx.preference.PreferenceScreen
+    <Preference
         android:key="pref_developer_options"
         android:persistent="false"
         android:title="@string/dev_options_title"
         android:summary="@string/dev_options_summary"
         android:fragment="com.android.launcher3.settings.DeveloperOptionsFragment"/>
 
-</androidx.preference.PreferenceScreen>
+</Preference>
