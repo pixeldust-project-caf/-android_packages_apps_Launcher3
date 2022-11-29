@@ -275,6 +275,11 @@ public class ActivityAllAppsContainerView<T extends Context & ActivityContext>
         mBottomSheetBackgroundColor =
                 Themes.getAttrColor(getContext(), R.attr.materialColorSurfaceDim);
         updateBackgroundVisibility(mActivityContext.getDeviceProfile());
+        if (Utilities.showSearch(getContext())) {
+            mSearchContainer.setVisibility(View.VISIBLE);
+        } else {
+            mSearchContainer.setVisibility(View.GONE);
+        }
         mSearchUiManager.initializeSearch(this);
     }
 
