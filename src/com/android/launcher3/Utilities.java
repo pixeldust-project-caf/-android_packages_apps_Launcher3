@@ -180,6 +180,7 @@ public final class Utilities {
     public static final String KEY_SINGLE_PAGE_CENTER = "pref_single_page_center";
     public static final String KEY_FORCE_MONOCHROME_ICONS = "pref_forced_monochrome_icons";
     public static final String KEY_SMARTSPACE = "pref_smartspace";
+    public static final String KEY_VIBRATION_TOGGLE = "pref_recents_vibration";
 
     @IntDef({TRANSLATE_UP, TRANSLATE_DOWN, TRANSLATE_LEFT, TRANSLATE_RIGHT})
     public @interface AdjustmentDirection{}
@@ -956,4 +957,9 @@ public final class Utilities {
         SharedPreferences prefs = LauncherPrefs.getPrefs(context.getApplicationContext());
         return prefs.getBoolean(KEY_SMARTSPACE, true);
     }
+
+    public static boolean recentsScrollVibration(Context context) {
+    	SharedPreferences prefs = LauncherPrefs.getPrefs(context.getApplicationContext());
+    	return prefs.getBoolean(KEY_VIBRATION_TOGGLE, true);
+   }
 }

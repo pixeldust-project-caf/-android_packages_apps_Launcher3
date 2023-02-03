@@ -17,6 +17,12 @@
             android:defaultValue="100" />
 
         <SwitchPreference
+            android:key="pref_recents_vibration"
+            android:defaultValue="true"
+            android:persistent="true"
+            android:title="@string/pref_recents_vibration_title"/>
+
+        <SwitchPreference
             android:key="pref_recents_meminfo"
             android:title="@string/recents_meminfo_title"
             android:defaultValue="false"

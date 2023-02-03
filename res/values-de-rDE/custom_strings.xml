@@ -154,4 +154,7 @@
 
     <!-- Preference default value -->
     <string name="pref_value_default">Standard</string>
+
+    <!-- Recents Scroll Vibration -->
+    <string name="pref_recents_vibration_title">Haptisches Feedback beim Wischen im Anwendungsverlauf aktivieren</string>
 </resources>
