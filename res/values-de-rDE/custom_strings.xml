@@ -83,9 +83,11 @@
     <string name="allow_wallpaper_zooming">Hintergrundbild-Zoomeffekt</string>
     <string name="allow_wallpaper_zooming_summary">Herein- und Herauszoomen des Hintergrundbilds bei Verwendung von App-Übersicht und -Verlauf</string>
     <!-- Homescreen Statusbar -->
-    <string name="show_statusbar_title">Statusleiste</string>
+    <string name="show_statusbar_title">Statusleiste anzeigen</string>
+    <string name="show_statusbar_title_summary">Statusleiste auf dem Startbildschirms anzeigen</string>
     <!-- Top shadow -->
-    <string name="show_top_shadow">Schatten oben</string>
+    <string name="show_top_shadow">Schatten an Statusleiste</string>
+    <string name="show_top_shadow_summary">Einen durchsichtigen Schatten an der Statusleiste anzeigen</string>
     <!-- Row Height -->
     <string name="row_height_title">Zeilenhöhe</string>
     <!-- Background blur -->
