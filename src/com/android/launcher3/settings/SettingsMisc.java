@@ -156,6 +156,8 @@ public class SettingsMisc extends CollapsingToolbarBaseActivity
         private String mHighLightKey;
         private boolean mPreferenceHighlighted = false;
 
+        private Preference mShowGoogleLensPref;
+
         @Override
         public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {
             final Bundle args = getArguments();
@@ -178,6 +180,9 @@ public class SettingsMisc extends CollapsingToolbarBaseActivity
                     screen.removePreference(preference);
                 }
             }
+
+            mShowGoogleLensPref = screen.findPreference(Utilities.KEY_LENS);
+            updateIsGoogleAppEnabled();
 
             if (getActivity() != null && !TextUtils.isEmpty(getPreferenceScreen().getTitle())) {
                 if (getPreferenceScreen().getTitle().equals(
@@ -213,6 +218,12 @@ public class SettingsMisc extends CollapsingToolbarBaseActivity
             outState.putBoolean(SAVE_HIGHLIGHTED_KEY, mPreferenceHighlighted);
         }
 
+        private void updateIsGoogleAppEnabled() {
+            if (mShowGoogleLensPref != null) {
+                mShowGoogleLensPref.setEnabled(Utilities.isGSAEnabled(getContext()));
+            }
+        }
+
         protected String getParentKeyForPref(String key) {
             return null;
         }
@@ -238,6 +249,7 @@ public class SettingsMisc extends CollapsingToolbarBaseActivity
                     requestAccessibilityFocus(getListView());
                 }
             }
+            updateIsGoogleAppEnabled();
         }
 
         private PreferenceHighlighter createHighlighter() {
