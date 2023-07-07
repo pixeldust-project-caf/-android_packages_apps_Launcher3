@@ -6,4 +6,5 @@
 <resources>
     <!-- Appseat -->
     <color name="appseat_color">#50D9DADB</color>
+    <color name="monochrome_icon_color">@*android:color/system_neutral1_800</color>
 </resources>
