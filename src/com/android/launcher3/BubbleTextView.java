@@ -288,7 +288,7 @@ public class BubbleTextView extends TextView implements ItemInfoUpdateReceiver,
         mDotParams.scale = 0f;
         mForceHideDot = false;
         setBackground(null);
-        if (FeatureFlags.ENABLE_TWOLINE_ALLAPPS.get()
+        if (mMaxLines > 1 || FeatureFlags.ENABLE_TWOLINE_ALLAPPS.get()
                 || FeatureFlags.ENABLE_TWOLINE_DEVICESEARCH.get()) {
             setMaxLines(1);
         }
@@ -436,7 +436,6 @@ public class BubbleTextView extends TextView implements ItemInfoUpdateReceiver,
             mBreakPointsIntArray = StringMatcherUtility.getListOfBreakpoints(label, MATCHER);
             if (mShouldShowLabel) {
                 setText(label);
-                setMaxLines(mMaxLines);
             }
         }
         if (info.contentDescription != null) {
@@ -698,8 +697,12 @@ public class BubbleTextView extends TextView implements ItemInfoUpdateReceiver,
             setPadding(getPaddingLeft(), (height - cellHeightPx) / 2, getPaddingRight(),
                     getPaddingBottom());
         }
-        // Only apply two line for all_apps and device search only if necessary.
-        if (shouldUseTwoLine() && (mLastOriginalText != null)) {
+        // only apply two line for all_apps
+        if (mMaxLines == 3 && mDisplay == DISPLAY_ALL_APPS) {
+            setSingleLine(false);
+            setMaxLines(3);
+        } else if ((mMaxLines == 2 && mDisplay == DISPLAY_ALL_APPS)
+                || shouldUseTwoLine() && (mLastOriginalText != null)) {
             CharSequence modifiedString = modifyTitleToSupportMultiLine(
                     MeasureSpec.getSize(widthMeasureSpec) - getCompoundPaddingLeft()
                             - getCompoundPaddingRight(),
