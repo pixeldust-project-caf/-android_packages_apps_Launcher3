@@ -146,7 +146,9 @@
     <string name="updating_launcher_components">Updating launcher components...</string>
 
     <!-- Shake Clear Recents -->
-    <string name="recents_shake_clear_all_title">Shake phone to clear all tasks</string>
+    <string name="recents_shake_clear_all_title" product="default">Shake phone to clear all tasks</string>
+    <string name="recents_shake_clear_all_title" product="tablet">Shake tablet to clear all tasks</string>
+    <string name="recents_shake_clear_all_title" product="device">Shake device to clear all tasks</string>
 
     <!-- Parallax -->
     <string name="short_parallax_title">Allow short parallax</string>
@@ -159,5 +161,7 @@
     <string name="pref_force_monochrome_themed_icons_summary">Generate themed icon for apps that do not have one (requires re-toggling of themed icons)</string>
 
     <!-- QSB -->
-    <string name="qsb_search_hint">Search this phone and more…</string>
+    <string name="qsb_search_hint" product="default">Search this phone and more…</string>
+    <string name="qsb_search_hint" product="tablet">Search this tablet and more…</string>
+    <string name="qsb_search_hint" product="device">Search this device and more…</string>
 </resources>
