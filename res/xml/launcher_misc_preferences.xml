@@ -4,41 +4,51 @@
     xmlns:launcher="http://schemas.android.com/apk/res-auto"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.launcher3">
 
-    <com.pixeldust.support.preference.CustomSeekBarPreference
-        android:key="pref_recents_opacity"
-        android:title="@string/background_opacity_title"
-        android:persistent="true"
-        android:max="100"
-        android:min="0"
-        settings:units="%"
-        android:defaultValue="40" />
+    <PreferenceCategory
+        android:title="@string/recents_category_title">
 
-    <SwitchPreference
-        android:key="pref_allowRotation"
-        android:title="@string/allow_rotation_title"
-        android:summary="@string/allow_rotation_desc"
-        android:defaultValue="false"
-        android:persistent="true"
-        launcher:logIdOn="615"
-        launcher:logIdOff="616" />
+        <com.pixeldust.support.preference.CustomSeekBarPreference
+            android:key="pref_recents_opacity"
+            android:title="@string/background_opacity_title"
+            android:persistent="true"
+            android:max="100"
+            android:min="0"
+            settings:units="%"
+            android:defaultValue="40" />
 
-    <androidx.preference.PreferenceScreen
-        android:persistent="false"
-        android:title="@string/suggestion_pref_screen_title"
-        android:key="pref_suggestions"
-        android:summary="@string/suggestion_pref_screen_desc">
-        <intent android:action="android.settings.ACTION_CONTENT_SUGGESTIONS_SETTINGS" />
-    </androidx.preference.PreferenceScreen>
-    
-    <com.pixeldust.support.preference.CustomSeekBarPreference
-        android:key="pref_blur_depth"
-        android:title="@string/background_blur_title"
-        android:summary="@string/background_blur_summary"
-        android:persistent="true"
-        android:max="175"
-        android:min="0"
-        settings:units="px"
-        android:defaultValue="23" />
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:title="@string/general_category_title">
+
+        <SwitchPreference
+            android:key="pref_allowRotation"
+            android:title="@string/allow_rotation_title"
+            android:summary="@string/allow_rotation_desc"
+            android:defaultValue="false"
+            android:persistent="true"
+            launcher:logIdOn="615"
+            launcher:logIdOff="616" />
+
+        <androidx.preference.PreferenceScreen
+            android:persistent="false"
+            android:title="@string/suggestion_pref_screen_title"
+            android:key="pref_suggestions"
+            android:summary="@string/suggestion_pref_screen_desc">
+            <intent android:action="android.settings.ACTION_CONTENT_SUGGESTIONS_SETTINGS" />
+        </androidx.preference.PreferenceScreen>
+        
+        <com.pixeldust.support.preference.CustomSeekBarPreference
+            android:key="pref_blur_depth"
+            android:title="@string/background_blur_title"
+            android:summary="@string/background_blur_summary"
+            android:persistent="true"
+            android:max="175"
+            android:min="0"
+            settings:units="px"
+            android:defaultValue="23" />
+
+    </PreferenceCategory>
 
     <androidx.preference.PreferenceScreen
         android:key="pref_developer_options"
