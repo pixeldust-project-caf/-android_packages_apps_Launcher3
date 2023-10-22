@@ -7,8 +7,8 @@
 
 package com.pixeldust.launcher;
 
-import com.android.launcher3.Launcher;
+import com.android.launcher3.uioverrides.QuickstepLauncher;
 
-public class PixeldustLauncher extends Launcher {
+public class PixeldustLauncher extends QuickstepLauncher {
 
 }
