@@ -10,15 +10,15 @@
     <string name="settings_title">Starteinstellungen</string>
     <!-- Categories -->
     <string name="home_category_title">Startbildschirm</string>
-    <string name="home_category_summary">Anpassungen von Google Now und mehr</string>
+    <string name="home_category_summary">Google Feed, Suchleiste und mehr</string>
     <string name="icons_category_title">Symbole</string>
-    <string name="icons_category_summary">Symbolgröße und weiteres anpassen</string>
+    <string name="icons_category_summary">Symbolgröße und mehr</string>
     <string name="app_drawer_category_title">App-Übersicht</string>
-    <string name="app_drawer_category_summary">App-Übersicht konfigurieren</string>
+    <string name="app_drawer_category_summary">App-Übersicht anpassen</string>
     <string name="recents_category_title">Anwendungsverlauf</string>
-    <string name="recents_category_summary">Anpassen des App-Verlaufs</string>
-    <string name="misc_category_title">Sonstiges</string>
-    <string name="misc_category_summary">Weitere Optionen</string>
+    <string name="recents_category_summary">Anwendungsverlauf anpassen</string>
+    <string name="misc_category_title">Verschiedenes</string>
+    <string name="misc_category_summary">Anwendungsverlauf, Schnellzugriffe und mehr</string>
     <string name="general_category_title">Allgemein</string>
     <string name="interface_category_title">Oberfläche</string>
     <string name="search_bar_category_title">Suchleiste</string>
@@ -70,7 +70,7 @@
     <string name="dock_music_search_summary">Google-Sound-Suche statt Google Assistant bei gedrücktem Mikrofon verwenden</string>
     <string name="dock_search_title">Google-Suchleiste</string>
     <string name="dock_search_summary">Suchleiste unten im Dock anzeigen</string>
-    <string name="dock_theme_title">Eingefärbte Symbole</string>
+    <string name="dock_theme_title">Symboldesigns</string>
     <string name="dock_theme_summary">Eingefärbte Symbole in der Suchleiste verwenden</string>
     <string name="search_radius_title">Eckradius</string>
     <!-- Hotseat Background -->
@@ -104,8 +104,8 @@
     <string name="recents_clear_all_title">Alle schließen</string>
     <string name="recents_lens_title">Lens</string>
     <!-- All apps themed icons -->
-    <string name="pref_themed_icons_title">Eingefärbte Symbole</string>
-    <string name="pref_themed_icons_summary">Stil der eingefärbte Symbole auf dem Startbildschirm folgen</string>
+    <string name="pref_themed_icons_title">Symboldesigns</string>
+    <string name="pref_themed_icons_summary">Stil der eingefärbten Symbole auf dem Startbildschirm folgen</string>
     <!-- AppInfo -->
     <string name="app_info_source">Quelle</string>
     <string name="app_info_source_system">System</string>
@@ -135,4 +135,18 @@
     <!-- Smartspace -->
     <string name="smartspace_pref_title">Auf einen Blick (At a Glance)</string>
     <string name="smartspace_pref_summary">Smartspace am oberen Bildschirmrand anzeigen</string>
+    <!-- Parallax -->
+    <string name="short_parallax_title">Kurzes Parallax Scrollen erlauben</string>
+    <string name="short_parallax_summary">Beschränkt den Scroll-Effekt auf eine kleinere Seitenanzahl, anstatt das Hintergrundbild zu beschneiden</string>
+    <string name="single_page_center_title">Bei nur einer Seite zentrieren</string>
+    <string name="single_page_center_summary">Zentriert das Hintergrundbild, wenn nur eine einzelne Seite verwendet wird</string>
+    
+    <!-- Force monochrome icons -->
+    <string name="pref_force_monochrome_themed_icons_title">Symboldesigns erzwingen</string>
+    <string name="pref_force_monochrome_themed_icons_summary">Eingefärbte Symbole für Apps generieren, die keines haben (Globale Einstellung für Symboldesigns muss neu aktiviert werden).</string>
+
+    <!-- QSB -->
+    <string name="qsb_search_hint" product="default">Smartphone durchsuchen</string>
+    <string name="qsb_search_hint" product="tablet">Tablet durchsuchen und mehr…</string>
+    <string name="qsb_search_hint" product="device">Gerät durchsuchen und mehr…</string>
 </resources>
