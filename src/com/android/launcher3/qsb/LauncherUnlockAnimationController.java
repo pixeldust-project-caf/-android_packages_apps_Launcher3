@@ -84,9 +84,9 @@ public final class LauncherUnlockAnimationController extends ILauncherUnlockAnim
 
     @Override
     public void setSmartspaceSelectedPage(int selectedPage) {
-        if (mSmartspaceView != null) {
+        /*if (mSmartspaceView != null) {
             mSmartspaceView.post(() -> mSmartspaceView.setSelectedPage(selectedPage));
-        }
+        }*/
     }
 
     @Override
@@ -117,7 +117,7 @@ public final class LauncherUnlockAnimationController extends ILauncherUnlockAnim
                 || mSmartspaceState.getSelectedPage() != selectedPage
                 || !mSmartspaceState.getBoundsOnScreen().equals(bounds)) {
             mSmartspaceState.setBoundsOnScreen(bounds);
-            mSmartspaceState.setSelectedPage(selectedPage);
+            //mSmartspaceState.setSelectedPage(selectedPage);
             mSmartspaceState.setVisibleOnScreen(visible);
             dispatchSmartspaceStateToSysui();
         }
