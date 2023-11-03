@@ -120,7 +120,7 @@ public class GridSizeMigrationUtil {
             DbReader destReader = new DbReader(t.getDb(), TABLE_NAME, context, validPackages);
 
             Point targetSize = new Point(destDeviceState.getColumns(), destDeviceState.getRows());
-            migrate(target, srcReader, destReader, destDeviceState.getNumHotseat(),
+            migrate(context, target, srcReader, destReader, destDeviceState.getNumHotseat(),
                     targetSize, srcDeviceState, destDeviceState);
             dropTable(t.getDb(), TMP_TABLE);
             t.commit();
@@ -141,7 +141,7 @@ public class GridSizeMigrationUtil {
     }
 
     public static boolean migrate(
-            @NonNull DatabaseHelper helper,
+            @NonNull final Context context, @NonNull DatabaseHelper helper,
             @NonNull final DbReader srcReader, @NonNull final DbReader destReader,
             final int destHotseatSize, @NonNull final Point targetSize,
             @NonNull final DeviceGridState srcDeviceState,
@@ -215,7 +215,7 @@ public class GridSizeMigrationUtil {
                 Log.d(TAG, "Migrating " + screenId);
             }
             solveGridPlacement(helper, srcReader,
-                    destReader, screenId, trgX, trgY, workspaceToBeAdded, false);
+                    destReader, context, screenId, trgX, trgY, workspaceToBeAdded, false);
             if (workspaceToBeAdded.isEmpty()) {
                 break;
             }
@@ -226,7 +226,7 @@ public class GridSizeMigrationUtil {
         int screenId = destReader.mLastScreenId + 1;
         while (!workspaceToBeAdded.isEmpty()) {
             solveGridPlacement(helper, srcReader,
-                    destReader, screenId, trgX, trgY, workspaceToBeAdded, preservePages);
+                    destReader, context, screenId, trgX, trgY, workspaceToBeAdded, preservePages);
             screenId++;
         }
 
@@ -326,7 +326,7 @@ public class GridSizeMigrationUtil {
 
     private static void solveGridPlacement(@NonNull final DatabaseHelper helper,
             @NonNull final DbReader srcReader, @NonNull final DbReader destReader,
-            final int screenId, final int trgX, final int trgY,
+            @NonNull final Context context, final int screenId, final int trgX, final int trgY,
             @NonNull final List<DbEntry> sortedItemsToPlace, final boolean matchingScreenIdOnly) {
         final GridOccupancy occupied = new GridOccupancy(trgX, trgY);
         final Point trg = new Point(trgX, trgY);
