@@ -144,8 +144,8 @@
     <string name="single_page_center_summary">Zentriert das Hintergrundbild, wenn nur eine einzelne Seite verwendet wird</string>
     
     <!-- Force monochrome icons -->
-    <string name="pref_force_monochrome_themed_icons_title">Symboldesigns erzwingen</string>
-    <string name="pref_force_monochrome_themed_icons_summary">Eingefärbte Symbole für Apps generieren, die keines haben (Globale Einstellung für Symboldesigns muss neu aktiviert werden).</string>
+    <string name="pref_force_monochrome_themed_icons_title">Monochromes Symboldesign erzwingen</string>
+    <string name="pref_force_monochrome_themed_icons_summary">Generiert monochrome App-Symbole, sofern diese nicht von den Apps bereitgestellt werden (Globale Einstellung für Symboldesigns muss neu aktiviert werden).</string>
 
     <!-- QSB -->
     <string name="qsb_search_hint" product="default">Smartphone durchsuchen</string>
